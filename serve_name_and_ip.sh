@@ -20,7 +20,6 @@ apt-get update -y
 apt-get install -y docker-ce docker-ce-cli containerd.io
 
 # create html file
-
 hostname=`hostname`
 ip_addr=`hostname --all-ip-addresses`
 
@@ -35,7 +34,12 @@ cat << EOF >> index.html
 </html>
 EOF
 
+# create dockerfile
+cat << EOF >> Dockerfile
+FROM nginx:latest
+COPY ["index.html", "/usr/share/nginx/html/"]
+EOF
+
 # run nginx serving the static file
-docker create --name some-nginx -p 8080:80 nginx
-docker cp index.html some-nginx:/usr/share/nginx/html/
-docker start some-nginx
+docker build -t nginx-display-host .
+docker run -d -p 8080:80 --restart=unless-stopped nginx-display-host
