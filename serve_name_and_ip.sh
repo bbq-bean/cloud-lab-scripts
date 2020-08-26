@@ -42,4 +42,4 @@ EOF
 
 # run nginx serving the static file
 docker build -t nginx-display-host .
-docker run -d -p 8080:80 --restart=unless-stopped nginx-display-host
+docker run -d -p 8080:80 --name return-http-host --restart=unless-stopped nginx-display-host
