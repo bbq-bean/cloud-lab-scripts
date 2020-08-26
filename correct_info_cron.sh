@@ -2,7 +2,7 @@
 hostname=`hostname`
 ip_addr=`hostname --all-ip-addresses`
 
-cat << EOF >> index.html
+cat << EOF > index.html
 <!DOCTYPE html>
 <html>
   <header>
