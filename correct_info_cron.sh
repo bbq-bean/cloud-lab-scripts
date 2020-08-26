@@ -1,4 +1,6 @@
 # create html file
+rm -r index.html
+
 hostname=`hostname`
 ip_addr=`hostname --all-ip-addresses`
 
