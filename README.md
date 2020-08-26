@@ -11,6 +11,11 @@ serve_name_and_ip.sh
 
 now there is a site to actually test and set up in 2 seconds.
 
+AWS LAUNCH OPTIONS:
+curl -O https://raw.githubusercontent.com/bbq-bean/cloud-lab-scripts/master/serve_name_and_ip.sh
+chmod +x serve_name_and_ip.sh
+sudo ./serve_name_and_ip.sh
+
 setup_docker.sh
 ---
 -given the username and pw at top of the script, setup docker and docker user
